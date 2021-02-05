@@ -54,6 +54,11 @@ exports.config = {
       enabled: true,
       outputDir: 'tests/output/allure',
     },
+    testomat: {
+      enabled: true,
+      require: '@testomatio/reporter/lib/adapter/codecept',
+      apiKey: process.env.TESTOMATIO,
+    },
   },
   mocha: {
     reporterOptions: {
