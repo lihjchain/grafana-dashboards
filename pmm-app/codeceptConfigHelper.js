@@ -30,12 +30,9 @@ module.exports = {
 
   },
   getChunks: (files) => {
-    const dependentTests = files.filter((value) => /PMMSettings|database|ia|permissions/.test(value));
-    const otherTests = files.filter((val) => !dependentTests.includes(val));
 
     return [
-      dependentTests,
-      otherTests,
+      files,
     ];
   },
 };
