@@ -7,7 +7,7 @@ Before(async (I) => {
 });
 
 Scenario(
-  'PMM-T294 Verify user is able to see message about Disabled STT in Checks panel at Home Page [critical] @not-pr-pipeline',
+  'PMM-T294 Verify user is able to see message about Disabled STT in Checks panel at Home Page [critical] @not-pr-pipeline @group2',
   async (I, homePage, databaseChecksPage, settingsAPI) => {
     await settingsAPI.apiDisableSTT();
     I.amOnPage(homePage.url);
@@ -20,7 +20,7 @@ Scenario(
 );
 
 Scenario(
-  'PMM-T295 PMM-T276 Verify user is able to see message about Disabled STT at Database Checks page [critical] @not-pr-pipeline',
+  'PMM-T295 PMM-T276 Verify user is able to see message about Disabled STT at Database Checks page [critical] @not-pr-pipeline @group2',
   async (I, databaseChecksPage, pmmSettingsPage, settingsAPI) => {
     await settingsAPI.apiDisableSTT();
     I.amOnPage(databaseChecksPage.url);
@@ -38,7 +38,7 @@ Scenario(
 );
 
 Scenario(
-  'PMM-T233 PMM-T234 Verify user is able to access PMM Database Checks through UI and with URL [critical] @not-pr-pipeline',
+  'PMM-T233 PMM-T234 Verify user is able to access PMM Database Checks through UI and with URL [critical] @not-pr-pipeline @group2',
   async (I, adminPage, databaseChecksPage, pmmSettingsPage, settingsAPI, securityChecksAPI) => {
     await settingsAPI.apiEnableSTT();
     await securityChecksAPI.waitForSecurityChecksResults(20);
@@ -52,7 +52,7 @@ Scenario(
 );
 
 Scenario(
-  'PMM-T233 Verify user can see Number of failed checks at Home Page and open PMM Database Checks page from it [critical] @not-pr-pipeline',
+  'PMM-T233 Verify user can see Number of failed checks at Home Page and open PMM Database Checks page from it [critical] @not-pr-pipeline @group2',
   async (I, homePage, databaseChecksPage, settingsAPI, securityChecksAPI) => {
     await settingsAPI.apiEnableSTT();
     await securityChecksAPI.waitForSecurityChecksResults(20);
@@ -65,7 +65,7 @@ Scenario(
 );
 
 Scenario(
-  'PMM-T236 Verify user is able to hover Failed Checks values and see tooltip [minor] @not-pr-pipeline',
+  'PMM-T236 Verify user is able to hover Failed Checks values and see tooltip [minor] @not-pr-pipeline @group2',
   async (I, databaseChecksPage, settingsAPI, securityChecksAPI) => {
     const row = 1;
 
@@ -79,7 +79,7 @@ Scenario(
 );
 
 Scenario(
-  'PMM-T241 Verify user can see correct service name for failed checks [critical] @not-pr-pipeline',
+  'PMM-T241 Verify user can see correct service name for failed checks [critical] @not-pr-pipeline @group2',
   async (I, databaseChecksPage, settingsAPI, securityChecksAPI) => {
     await settingsAPI.apiEnableSTT();
     await securityChecksAPI.waitForSecurityChecksResults(20);
