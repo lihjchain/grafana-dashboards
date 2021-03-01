@@ -134,16 +134,14 @@ Scenario(
   },
 );
 
-
-//need to be fixed before codeceptjs v3 will be merged
-xScenario(
+Scenario(
   'PMM-T424 Verify PT Summary Panel is available after Upgrade @pmm-upgrade @not-ui-pipeline @not-pr-pipeline',
   async ({ I, dashboardPage }) => {
     const filter = 'Node Name';
 
     I.amOnPage(`${dashboardPage.nodeSummaryDashboard.url}&var-node_name=pmm-server`);
-    dashboardPage.waitPTSummaryInformation();
     dashboardPage.waitForDashboardOpened();
+    await dashboardPage.expandEachDashboardRow();
     await dashboardPage.applyFilter(filter, 'pmm-server');
 
     I.waitForElement(dashboardPage.nodeSummaryDashboard.ptSummaryDetail.reportContainer, 60);
