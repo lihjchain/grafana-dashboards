@@ -16,6 +16,7 @@ Scenario(
     dashboardPage.waitForDashboardOpened();
     await dashboardPage.applyFilter('Node Name', 'pmm-server');
     I.click(adminPage.fields.metricTitle);
+    await dashboardPage.expandEachDashboardRow();
     adminPage.peformPageDown(5);
     dashboardPage.verifyMetricsExistence(dashboardPage.nodeSummaryDashboard.metrics);
     await dashboardPage.verifyThereAreNoGraphsWithNA();
